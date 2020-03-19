@@ -1,0 +1,16 @@
+'use strict';
+// Javascript Improvements
+{
+    // "{0} is dead, but {1} is alive! {0} {2}".format("ASP", "ASP.NET")
+    // "Hello, {name}, are you feeling {adjective}?".format({name:"Gabriel", adjective: "OK"});
+    String.prototype.format = function() {
+        var str = this.toString();
+        if (arguments.length) {
+            var key, args = null;
+            if(typeof arguments[0] != 'undefined'){ args = Array.prototype.slice.call(arguments); }
+            else { args = arguments[0]; }
+            for (key in args) { str = str.replace(new RegExp("\\{" + key + "\\}", "gi"), args[key]); }
+        }
+        return str;
+    };
+}// Improvements
