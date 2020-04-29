@@ -1,0 +1,12 @@
+function ok(basla){
+
+var command = '';
+var elems = document.getElementsByTagName('table')[0].querySelectorAll('tr>td:nth-child(3)');
+for(var el = 0; el < elems.length && el < basla; el++){
+	bak = elems[el].getElementsByTagName('a')[0].innerText;
+	elems[el].parentElement.remove();
+	command += ' & move '+bak+' D:\\BAK\\';
+}
+console.log(command);
+
+} ok(5);
